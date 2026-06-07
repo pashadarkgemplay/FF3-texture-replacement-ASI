@@ -1,0 +1,17 @@
+Debug/
+Release/
+x64/
+*.obj
+*.pch
+*.pdb
+*.idb
+*.tlog
+*.log
+*.recipe
+*.lastbuildstate
+*.FileListAbsolute.txt
+*.CppClean.log
+*.unsuccessfulbuild
+*.user
+*.asi
+*.dll
