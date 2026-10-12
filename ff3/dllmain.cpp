@@ -131,7 +131,7 @@ bool ConvertToRGBA32(GLenum format, GLenum type, GLsizei width, GLsizei height, 
 
 bool TryLoadReplacement(unsigned int hash, int& outWidth, int& outHeight, unsigned char*& outPixels) {
     std::stringstream filePath;
-    filePath << "pixelpasha/0x" << std::hex << hash << ".png";
+    filePath << "pasha/0x" << std::hex << hash << ".png";
     if (fs::exists(filePath.str())) {
         int channels = 0;
         stbi_set_flip_vertically_on_load(0);
@@ -208,7 +208,7 @@ void WINAPI Detour_glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GL
     o_glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
 }
 void InitHooks() {
-    fs::create_directories("pixelpasha");
+    fs::create_directories("pasha");
     LoadHashDatabase();
 
     if (MH_Initialize() != MH_OK) return;
